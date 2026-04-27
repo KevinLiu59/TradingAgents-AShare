@@ -8,6 +8,9 @@ from .cn_akshare_provider import CnAkshareProvider
 from .cn_baostock_provider import CnBaoStockProvider
 
 
+from .cn_tushare_provider import CnTushareProvider
+
+
 class DataProviderRegistry:
     """Simple in-memory provider registry."""
 
@@ -27,6 +30,7 @@ class DataProviderRegistry:
 def build_default_registry() -> DataProviderRegistry:
     registry = DataProviderRegistry()
     registry.register(CnAkshareProvider())
+    registry.register(CnTushareProvider())
     registry.register(CnBaoStockProvider())
     registry.register(YFinanceProvider())
     registry.register(AlphaVantageProvider())
